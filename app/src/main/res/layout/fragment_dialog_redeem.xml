@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/background_light"
+    android:padding="8dp"
+    tools:context="co.molzol.molzol.RedeemDialogFragment">
+
+    <TextView
+        android:id="@+id/dialog_store_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Mols -"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="14dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="8dp"
+        android:text="* Only Mols are redeemable"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_redeem_text2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="8dp"
+        android:text="* Minimum required Mols for redemption is 500"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_redeem_text3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="* Zols get converted to Mols after confirmation from store"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/dialog_redeem_redeem_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="REDEEM"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_mols"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="100"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dialog_store_name"
+        app:layout_constraintStart_toEndOf="@+id/dialog_store_name"
+        app:layout_constraintTop_toTopOf="@+id/dialog_store_name" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_cmv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Current market value - 1 Mol = 1 Rupee"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/dialog_redeem_mols"
+        app:layout_constraintStart_toEndOf="@+id/dialog_redeem_mols"
+        app:layout_constraintTop_toTopOf="@+id/dialog_redeem_mols" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_login_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:text="Please sign in to continue"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_redeem_text1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_store_name" />
+
+    <Spinner
+        android:id="@+id/dialog_redeem_cnf_spn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dialog_redeem_cnf_txt1"
+        app:layout_constraintStart_toEndOf="@+id/dialog_redeem_cnf_txt1"
+        app:layout_constraintTop_toTopOf="@+id/dialog_redeem_cnf_txt1" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_cnf_txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:text="Convert"
+        android:textColor="@android:color/holo_green_dark"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_redeem_text1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_store_name" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_cnf_txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mols"
+        android:textColor="@android:color/holo_green_dark"
+        app:layout_constraintBottom_toBottomOf="@+id/dialog_redeem_cnf_spn1"
+        app:layout_constraintStart_toEndOf="@+id/dialog_redeem_cnf_spn1"
+        app:layout_constraintTop_toTopOf="@+id/dialog_redeem_cnf_spn1" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_cnf_txt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="to"
+        android:textColor="@android:color/holo_green_dark"
+        app:layout_constraintBottom_toBottomOf="@+id/dialog_redeem_cnf_txt2"
+        app:layout_constraintStart_toEndOf="@+id/dialog_redeem_cnf_txt2"
+        app:layout_constraintTop_toTopOf="@+id/dialog_redeem_cnf_txt2" />
+
+    <Spinner
+        android:id="@+id/dialog_redeem_cnf_spn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/dialog_redeem_cnf_txt3"
+        app:layout_constraintStart_toEndOf="@+id/dialog_redeem_cnf_txt3"
+        app:layout_constraintTop_toTopOf="@+id/dialog_redeem_cnf_txt3" />
+
+    <TextView
+        android:id="@+id/dialog_redeem_500_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:text="Minimum required mols for redemption is 500"
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_redeem_text1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_store_name" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MolZol</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_activity_stores">Stores</string>
+
+    <string name="title_activity_wallet">My Wallet</string>
+    <string name="upto5_cashback">#UpTo5%CashBack</string>
+    <string name="comingsoon">#ComingSoon</string>
+    <string name="login_txt"><u>Log In</u></string>
+    <string name="sign_up_txt"><u>Sign Up</u></string>
+    <string name="get_100_bonus">Get ₹100 Bonus On</string>
+    <string name="shop_amp_earn"><![CDATA[Shop & Earn]]></string>
+
+</resources>
