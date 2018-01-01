@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,14 +46,14 @@ public class DealsAdapter extends RecyclerView.Adapter<DealsAdapter.DealsViewHol
     @Override
     public void onBindViewHolder(DealsViewHolder holder, int position) {
 
-        Deal deal = deals.getDotdList().get(position);
+        Deal deal = deals.dotdList.get(position);
         Context context = holder.dealImage.getContext();
         try{
-            holder.dealTitle.setText(deal.getTitle());
-            holder.dealDescription.setText(deal.getDescription());
-            Uri imageUri = Uri.parse(deal.getImageUrls().get(1).getUrl());
+            holder.dealTitle.setText(deal.title);
+            holder.dealDescription.setText(deal.description);
+            Uri imageUri = Uri.parse(deal.imageUrls.get(1).url);
             Picasso.with(context).load(imageUri).fit().centerInside().into(holder.dealImage);
-            holder.dealUrl = deal.getUrl();
+            holder.dealUrl = deal.url;
         }catch(Exception e){
             ColorDrawable colorAccent = new ColorDrawable(Color.parseColor("#ff4081"));
             /*holder.dealTitle.setBackground(colorAccent);
@@ -67,7 +66,7 @@ public class DealsAdapter extends RecyclerView.Adapter<DealsAdapter.DealsViewHol
 
     @Override
     public int getItemCount() {
-        return deals.getDotdList().size();
+        return deals.dotdList.size();
     }
 
     public static class DealsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

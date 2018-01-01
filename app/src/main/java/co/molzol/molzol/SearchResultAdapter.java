@@ -46,14 +46,14 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
     public void onBindViewHolder(SearchViewHolder holder, int position) {
 
         try{
-            Product product = productInfoList.getProductList().get(position);
+            Product product = productInfoList.productInfoList.get(position);
 
-            holder.prodTitle.setText(product.getProductBaseInfoV1().getTitle());
-            holder.prodMRP.setText(product.getProductBaseInfoV1().getMaximumRetailPrice().getAmount().toString());
-            holder.prodCurrPrice.setText(product.getProductBaseInfoV1().getFlipkartSellingPrice().getAmount().toString());
-            holder.prodUrl = product.getProductBaseInfoV1().getProductUrl();
+            holder.prodTitle.setText(product.productBaseInfoV1.title);
+            holder.prodMRP.setText(product.productBaseInfoV1.maximumRetailPrice.amount.toString());
+            holder.prodCurrPrice.setText(product.productBaseInfoV1.flipkartSellingPrice.amount.toString());
+            holder.prodUrl = product.productBaseInfoV1.productUrl;
             holder.prodStore.setImageResource(R.drawable.flipkart1);
-            Map<String, String> images = product.getProductBaseInfoV1().getImageUrls();
+            Map<String, String> images = product.productBaseInfoV1.imageUrls;
 
             String prodImage = null;
             if(images.containsKey("200x200")){
@@ -79,7 +79,7 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
     @Override
     public int getItemCount() {
         try {
-            return productInfoList.getProductList().size();
+            return productInfoList.productInfoList.size();
         } catch(Exception e) {
             return 0;
         }

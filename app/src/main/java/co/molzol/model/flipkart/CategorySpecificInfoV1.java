@@ -5,4 +5,13 @@ package co.molzol.model.flipkart;
  */
 
 public class CategorySpecificInfoV1 {
+
+    /*public List<String> keySpecs = null;
+    public List<String> detailedSpecs = null;*/
+    /*public List<SpecificationList> specificationList = null;
+    public BooksInfo booksInfo;
+    public LifeStyleInfo lifeStyleInfo;*/
+    /*public Object specificationList = null;
+    public Object booksInfo;
+    public Object lifeStyleInfo;*/
 }

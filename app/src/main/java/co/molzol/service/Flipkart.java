@@ -1,5 +1,8 @@
 package co.molzol.service;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -26,9 +29,17 @@ public class Flipkart {
     private static HttpEntity requestEntity;
 
     static{
+
+        Gson gson = new GsonBuilder()
+                .excludeFieldsWithoutExposeAnnotation()
+                //.setDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'")
+                .create();
+
+        GsonHttpMessageConverter gsonConverter = new GsonHttpMessageConverter();
+        gsonConverter.setGson(gson);
         restTemplate = new RestTemplate();
         requestHeaders = new HttpHeaders();
-        restTemplate.getMessageConverters().add(new GsonHttpMessageConverter());
+        restTemplate.getMessageConverters().add(gsonConverter);
         requestHeaders.set("Fk-Affiliate-Id", "careeramr");
         requestHeaders.set("Fk-Affiliate-Token","9fb75352eb43425597731e5fa3064462");
         requestEntity = new HttpEntity(requestHeaders);
@@ -55,7 +66,7 @@ public class Flipkart {
             dealList.add(d);
             dealList.add(d);
             dealList.add(d);
-            dod.setDotdList(dealList);
+            dod.dotdList = dealList;
 
             return dod;
         }
@@ -66,7 +77,9 @@ public class Flipkart {
         try {
             UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(Constants.SEARCH_PRODUCT)
                     .queryParam("query", query)
-                    .queryParam("resultCount", count);
+                    .queryParam("resultCount", 10);
+
+            //ResponseEntity<String> response = restTemplate.exchange(builder.build().encode().toUri(), HttpMethod.GET, requestEntity, String.class);
 
             ResponseEntity<ProductInfoList> response = restTemplate.exchange(builder.build().encode().toUri(), HttpMethod.GET, requestEntity, ProductInfoList.class);
             return response.getBody();
